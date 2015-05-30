@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "StrangeToolkitLibraries", "StrangeToolkitLibraries", "{35746AC0-BBB4-4CCC-8A44-9735212B1338}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StrangeToolkit.Core", "StrangeToolkitLibraries\StrangeToolkit.Core\StrangeToolkit.Core.csproj", "{28CC1CF3-5994-4339-9232-C1E946422AE3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StrangeToolkit.Controls", "StrangeToolkitLibraries\StrangeToolkit.Controls\StrangeToolkit.Controls.csproj", "{247C54B2-69DB-40B0-9D06-E585E60686ED}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{28CC1CF3-5994-4339-9232-C1E946422AE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28CC1CF3-5994-4339-9232-C1E946422AE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28CC1CF3-5994-4339-9232-C1E946422AE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28CC1CF3-5994-4339-9232-C1E946422AE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{247C54B2-69DB-40B0-9D06-E585E60686ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{247C54B2-69DB-40B0-9D06-E585E60686ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{247C54B2-69DB-40B0-9D06-E585E60686ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{247C54B2-69DB-40B0-9D06-E585E60686ED}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{28CC1CF3-5994-4339-9232-C1E946422AE3} = {35746AC0-BBB4-4CCC-8A44-9735212B1338}
+		{247C54B2-69DB-40B0-9D06-E585E60686ED} = {35746AC0-BBB4-4CCC-8A44-9735212B1338}
+	EndGlobalSection
+EndGlobal
