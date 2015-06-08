@@ -84,6 +84,34 @@ namespace StrangeToolkit.Request
             return linkBuilder.ToString();
         }
 
+        private string CreateAddress(string fullAddress)
+        {
+            var address = fullAddress;
+
+            if (!this.TryCache)
+            {
+                if (!this.Address.Contains("?"))
+                {
+                    var lastLinkSymbol = this.Address[this.Address.Length - 1];
+
+                    if (lastLinkSymbol == '/')
+                    {
+                        this.Address = this.Address.Substring(0, this.Address.Length - 1);
+                    }
+
+                    address = address +"?";
+                }
+                else
+                {
+                    address = address + "&";
+                }
+
+                address = address + "noCacheKeyGuid=" + Guid.NewGuid();
+            }
+
+            return address;
+        }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods", MessageId = "0", Justification = "Validated by Guard")]
         public virtual async Task<Response<T>> SendRequestAsync()
         {
@@ -141,7 +169,7 @@ namespace StrangeToolkit.Request
                             switch (this.HttpMethod)
                             {
                                 case HttpMethodType.Get:
-                                    httpRequestMessage.RequestUri = new Uri(this.Address + parametersData);
+                                    httpRequestMessage.RequestUri = new Uri(this.CreateAddress(this.Address + parametersData));
                                     break;
 
                                 case HttpMethodType.Post:
@@ -150,8 +178,8 @@ namespace StrangeToolkit.Request
                                     {
                                         if (!string.IsNullOrEmpty(parametersData))
                                         {
-                                            httpRequestMessage.Content.Headers.ContentType = new MediaTypeHeaderValue("application/x-www-form-urlencoded");
                                             httpRequestMessage.Content = new StringContent(parametersData);
+                                            httpRequestMessage.Content.Headers.ContentType = new MediaTypeHeaderValue("application/x-www-form-urlencoded");
                                         }
                                     }
                                     else

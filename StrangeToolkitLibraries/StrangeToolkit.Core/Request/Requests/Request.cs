@@ -14,6 +14,8 @@
 
         public string Address { get; set; }
 
+        public bool TryCache { get; set; }
+
         public Dictionary<string, string> Headers { get; private set; }
 
         /// <summary>
@@ -27,7 +29,6 @@
         {
             this.Headers = new Dictionary<string, string>();
             this.parameters = new ParametersCollection();
-            this.parameters.Add("noCacheGuidKey", Guid.NewGuid().ToString());
         }
 
         protected Request(HttpMethodType httpMethod)
